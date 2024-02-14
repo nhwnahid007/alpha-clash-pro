@@ -38,49 +38,69 @@ function handleKeyboardKeyUpEvent(event){
     //check matched or not
 
     if(playerPressed === expectedAlphabet){
-        // console.log('You get a point!');
-        // console.log('You have pressed correctly',expectedAlphabet);
+      // console.log('You get a point!');
 
-        //update score:
-        //1. Get the current score
-
-        const currentScoreElement=document.getElementById('current-score');
-        const currentScoreText=currentScoreElement.innerText;
-        const currentScore=parseInt(currentScoreText);
-
-        console.log('current score', currentScore);
+      const currentScore = getTextElementValueById("current-score");
+      const updatedScore=currentScore+1;
+      setTextElementValueById("current-score",updatedScore);
 
 
 
 
 
-        //2. increase the score by 1
+      //!xxxxxxxxxxxxxxxxxxxxxxxx
 
-        const newScore=currentScore+1;
-        //3. show the updated score
-        currentScoreElement.innerText=newScore;
-        //4. 
+      // console.log('You have pressed correctly',expectedAlphabet);
 
+      //update score:
+      //1. Get the current score
 
-        //start a new round
+      // const currentScoreElement=document.getElementById('current-score');
+      // const currentScoreText=currentScoreElement.innerText;
+      // const currentScore=parseInt(currentScoreText);
 
-        removeBackgroundColorById(expectedAlphabet);
-        continueGame();
+      // console.log('current score', currentScore);
+
+      // //2. increase the score by 1
+
+      // const newScore=currentScore+1;
+      // //3. show the updated score
+      // currentScoreElement.innerText=newScore;
+      //4.
+      
+
+      //start a new round
+
+      removeBackgroundColorById(expectedAlphabet);
+      continueGame();
     }
     else{
         console.log('You missed. You lost life');
+
+        const currentLife=getTextElementValueById('current-life');
+        const updatedLife=currentLife-1;
+        setTextElementValueById('current-life',updatedLife);
+        
+
+
+
+
+
+
+        //!xxxxxxxxxxxxxxxxx
         //step-1: get the current life number
-        const currentLifeElement=document.getElementById('current-life');
-       const currentLifeText=currentLifeElement.innerText;
-       const CurrentLife=parseInt(currentLifeText);
-        //step-2: reduce the life count
-        const newLife=CurrentLife-1;
+    //     const currentLifeElement=document.getElementById('current-life');
+    //    const currentLifeText=currentLifeElement.innerText;
+    //    const CurrentLife=parseInt(currentLifeText);
+    //     //step-2: reduce the life count
+    //     const newLife=CurrentLife-1;
 
 
-        //step-3: display updated life count
+    //     //step-3: display updated life count
 
-        currentLifeElement.innerText=newLife;
+    //     currentLifeElement.innerText=newLife;
 
+    //#Alternative
 
     }
 
@@ -101,7 +121,8 @@ function play(){
 function continueGame(){
     //step-1 : generate a randome alpahabet
     const alphabet= getARandomAlphabet();
-    console.log('Your random alphabet is: ',alphabet);
+
+    // console.log('Your random alphabet is: ',alphabet);
 
     //set randomly generated alphabet to the string
 

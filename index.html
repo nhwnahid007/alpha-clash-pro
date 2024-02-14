@@ -39,8 +39,9 @@
            <div class="flex justify-center">
             <p class="bg-[#2F2941] rounded-b-2xl p-2 text-white">Don't watch keyboard  while playing...</p>
            </div>
-            <div class="flex h-full justify-center items-center">
+            <div class="flex flex-col h-full justify-center items-center">
              <p id="current-alphabet" class="text-black text-9xl font-bold uppercase">Y</p>
+             <p class="text-red-600 font-semibold">Press Esc to exit</p>
             </div>
           </div>
           <!-- Keyboard -->
@@ -108,7 +109,7 @@
           <!-- bg-gradient-to-r from-[#FFFFFF8F] to-[#98979700] -->
           <h4 class="text-3xl">Game over</h4>
           <h1 class="text-8xl">
-            <span class="font-extrabold">Score:</span><span>14</span>
+            <span class="font-extrabold">Score:</span> <span id="last-score">14</span>
           </h1>
           <button onclick="play()" class="btn">Play again</button>
           <p>Practice will make you Pro</p>

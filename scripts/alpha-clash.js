@@ -38,7 +38,10 @@ function handleKeyboardKeyUpEvent(event){
     //check matched or not
 
     if(playerPressed === expectedAlphabet){
-        console.log('You get a point');
+        console.log('You get a point!');
+        console.log('You have pressed correctly',expectedAlphabet);
+        removeBackgroundColorById(expectedAlphabet);
+        continueGame();
     }
     else{
         console.log('You missed. You lost life');
@@ -55,10 +58,10 @@ document.addEventListener('keyup', handleKeyboardKeyUpEvent);
 function play(){
     hideElementById('home-screen');
     ShowElementById("play-ground");
-    continuGame();
+    continueGame();
 }
 
-function continuGame(){
+function continueGame(){
     //step-1 : generate a randome alpahabet
     const alphabet= getARandomAlphabet();
     console.log('Your random alphabet is: ',alphabet);

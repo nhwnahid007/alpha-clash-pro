@@ -18,6 +18,21 @@
 function play(){
     hideElementById('home-screen');
     ShowElementById("play-ground");
+    continuGame();
 }
 
-//show playground
+function continuGame(){
+    //step-1 : generate a randome alpahabet
+    const alphabet= getARandomAlphabet();
+    console.log('Your random alphabet is: ',alphabet);
+
+    //set randomly generated alphabet to the string
+
+    const currentAlphabetElement = document.getElementById("current-alphabet");
+    currentAlphabetElement.innerText = alphabet;
+
+    //set background color
+    
+    setBackgroundColorById(alphabet)
+
+}

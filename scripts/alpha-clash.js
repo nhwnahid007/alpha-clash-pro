@@ -32,6 +32,11 @@ function handleKeyboardKeyUpEvent(event){
     if(playerPressed === 'Escape'){
         gameOver();
     }
+    
+    // if(playerPressed === 'Enter'){
+    //     play();
+    // }
+
 
     //get the expected to press
     const currentAlphabetElement=document.getElementById('current-alphabet');

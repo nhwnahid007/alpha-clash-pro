@@ -14,6 +14,43 @@
 
 // }
 
+// function handleKeyboardButtonPress(){
+//     console.log('Button pressed');
+// }
+// //capture keyboard keypress
+// document.addEventListener('keyup', handleKeyboardButtonPress);
+
+function handleKeyboardKeyUpEvent(event){
+    // console.log(event.key); //jet click korbo seta dekhabe
+
+    const playerPressed=event.key;
+
+    console.log('Player pressed', playerPressed);
+
+
+    //get the expected to press
+    const currentAlphabetElement=document.getElementById('current-alphabet');
+    const currentAlphabet=currentAlphabetElement.innerText;
+    const expectedAlphabet=currentAlphabet.toLowerCase();
+
+    console.log(playerPressed,currentAlphabet);
+
+    //check matched or not
+
+    if(playerPressed === expectedAlphabet){
+        console.log('You get a point');
+    }
+    else{
+        console.log('You missed. You lost life');
+    }
+
+    
+
+}
+
+document.addEventListener('keyup', handleKeyboardKeyUpEvent);
+
+
 //hide play
 function play(){
     hideElementById('home-screen');

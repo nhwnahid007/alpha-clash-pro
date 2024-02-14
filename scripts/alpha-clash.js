@@ -25,7 +25,7 @@ function handleKeyboardKeyUpEvent(event){
 
     const playerPressed=event.key;
 
-    console.log('Player pressed', playerPressed);
+    // console.log('Player pressed', playerPressed);
 
 
     //get the expected to press
@@ -33,18 +33,55 @@ function handleKeyboardKeyUpEvent(event){
     const currentAlphabet=currentAlphabetElement.innerText;
     const expectedAlphabet=currentAlphabet.toLowerCase();
 
-    console.log(playerPressed,currentAlphabet);
+    // console.log(playerPressed,currentAlphabet);
 
     //check matched or not
 
     if(playerPressed === expectedAlphabet){
-        console.log('You get a point!');
-        console.log('You have pressed correctly',expectedAlphabet);
+        // console.log('You get a point!');
+        // console.log('You have pressed correctly',expectedAlphabet);
+
+        //update score:
+        //1. Get the current score
+
+        const currentScoreElement=document.getElementById('current-score');
+        const currentScoreText=currentScoreElement.innerText;
+        const currentScore=parseInt(currentScoreText);
+
+        console.log('current score', currentScore);
+
+
+
+
+
+        //2. increase the score by 1
+
+        const newScore=currentScore+1;
+        //3. show the updated score
+        currentScoreElement.innerText=newScore;
+        //4. 
+
+
+        //start a new round
+
         removeBackgroundColorById(expectedAlphabet);
         continueGame();
     }
     else{
         console.log('You missed. You lost life');
+        //step-1: get the current life number
+        const currentLifeElement=document.getElementById('current-life');
+       const currentLifeText=currentLifeElement.innerText;
+       const CurrentLife=parseInt(currentLifeText);
+        //step-2: reduce the life count
+        const newLife=CurrentLife-1;
+
+
+        //step-3: display updated life count
+
+        currentLifeElement.innerText=newLife;
+
+
     }
 
     

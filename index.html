@@ -103,13 +103,14 @@
         </div>
       </section>
       <!-- Score -->
-      <section class="score hidden flex border min-h-screen  justify-center items-center">
+      <section id="final-score" class="score hidden flex border min-h-screen  justify-center items-center">
         <div id="score" class="text-white text-center space-y-5 rounded-lg p-4 ">
           <!-- bg-gradient-to-r from-[#FFFFFF8F] to-[#98979700] -->
+          <h4 class="text-3xl">Game over</h4>
           <h1 class="text-8xl">
             <span class="font-extrabold">Score:</span><span>14</span>
           </h1>
-          <button class="btn">Play again</button>
+          <button onclick="play()" class="btn">Play again</button>
           <p>Practice will make you Pro</p>
         </div>
       </section>
